@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "nyurban.com hCalendarizer",
+  "version": "1.0",
+  "description": "Provides hCalendar annotations for nyurban.com schedules.",
+  "content_scripts": [
+    {
+      "matches": ["http://nyurban.com/team-details/*"],
+      "js": [
+        "lib/jquery.min.js",
+        "lib/hcalendar.js",
+        "lib/nyurban.js",
+        "content_script.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
