@@ -24,7 +24,7 @@ function createHiddenVeventDataElement(
   span.append($('<span>').addClass(hcalendar.ClassName.LOCATION).text(
       location));
   return span;
-};
+}
 
 
 $('.payMidWrapper > div > table > tbody > tr:gt(0)').each(function() {
@@ -35,7 +35,7 @@ $('.payMidWrapper > div > table > tbody > tr:gt(0)').each(function() {
   var timeTd = tds[2];
   var opponentTd = tds[3];
   var resultsTd = tds[4];
-  
+
   var opponent = $(opponentTd).find('div > a').text().trim();
   if (opponent == nyurban.NO_GAME_THIS_WEEK) {
     return;
@@ -48,18 +48,19 @@ $('.payMidWrapper > div > table > tbody > tr:gt(0)').each(function() {
   var monthDay = dateParts[1].split('/');
   var dtstart = new Date(
       new Date().getFullYear(),
-      parseInt(monthDay[0]) - 1,
+      parseInt(monthDay[0], 10) - 1,
       monthDay[1],
-      12 + parseInt(timeParts[0]),
+      12 + parseInt(timeParts[0], 10),
       timeParts[1]);
   var dtend = new Date(dtstart.getTime());
   dtend.setHours(dtend.getHours() + 1);
 
   var locationTokens = $(locationTd).find('div > a').text().trim().split('-');
+  var court;
   if (locationTokens.length > 1) {
-    var court = nyurban.COURTS[locationTokens[1]] + ' court';
+    court = nyurban.COURTS[locationTokens[1]] + ' court';
   } else {
-    var court = '';
+    court = '';
   }
 
   // Add the hCalendar VEVENT data to the DOM, but as hidden elements because
