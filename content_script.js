@@ -70,10 +70,14 @@ chrome.storage.sync.get(preferences, function(preferences) {
     // the "Google Calendar (by Google)" Chrome Extension doesn't properly
     // support parsing <abbr> titles for "summary" or "location" fields.
     $(this).prepend(createHiddenVeventDataElement(
-        preferences.titleTemplate
-            .replace('${team}', team)
-            .replace('${opponent}', opponent),
-        court,
+        new util.Template(preferences.titleTemplate).evaluate({
+            team: team,
+            opponent: opponent
+        }),
+        new util.Template(preferences.descriptionTemplate).evaluate({
+          court: court,
+          location: nyurban.GYMS[locationTokens[0]]
+        }),
         dtstart.toISOString(),
         dtend.toISOString(),
         nyurban.GYMS[locationTokens[0]]));

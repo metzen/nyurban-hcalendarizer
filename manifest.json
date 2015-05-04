@@ -11,6 +11,7 @@
         "lib/hcalendar.js",
         "lib/nyurban.js",
         "preferences.js",
+        "util.js",
         "content_script.js"
       ],
       "run_at": "document_end"
