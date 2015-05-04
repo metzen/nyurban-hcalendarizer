@@ -10,6 +10,7 @@ var util = {};
 
 /**
  * A formatted string template.
+ * @param {string} templateString The template string.
  * @constructor
  */
 util.Template = function(templateString) {
@@ -18,7 +19,7 @@ util.Template = function(templateString) {
 
 /**
  * Evaluate the template using the given context.
- * @param {Object.<str,str>} context
+ * @param {!Object<string, string>} context A map from variable names to values.
  * @return {string} The evaluated template.
  */
 util.Template.prototype.evaluate = function(context) {
