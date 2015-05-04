@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="optionsApp" ng-csp>
   <head>
     <title>My Test Extension Options</title>
     <link rel="stylesheet" href="options.css">
-  </head>
-  <body>
-    <section id="event-properties">
-      <h3>Event property templates</h3>
-      <label for="title-template">Title:</label>
-      <input id="title-template" type="text">
-    </section>
-    <div id="buttons">
-      <button id="save">Done</button>
-    </div>
+    <script src="lib/angular.min.js"></script>
     <script src="preferences.js"></script>
     <script src="options.js"></script>
+  </head>
+  <body ng-controller="OptionsCtrl">
+    <section id="event-properties">
+      <h3>Event property templates</h3>
+      <ul>
+        <li>
+          <label>
+            <span>Title:</span>
+            <input type="text" ng-model="preferences.titleTemplate">
+          </label>
+        </li>
+        <li>
+          <label>
+            <span>Description:</span>
+            <textarea ng-model="preferences.descriptionTemplate"></textarea>
+          </label>
+        </li>
+      </ul>
+    </section>
+    <div id="buttons">
+      <button id="save" ng-click="save()">Done</button>
+    </div>
   </body>
 </html>

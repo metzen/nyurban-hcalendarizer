@@ -2,13 +2,33 @@ body {
   overflow: hidden;
 }
 
-label {
+label span {
   display: inline-block;
-  width: 3em;
+  padding-right: 5px;
+  text-align: right;
+  width: 6em;
+  vertical-align: top;
+  padding-top: 3px;
 }
 
 input {
   width: 18em;
+}
+
+textarea {
+  height: 5em;
+  width: 18em;
+}
+
+li {
+  list-style: none;
+  margin: 1em 0;
+  vertical-align: top;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 #buttons {

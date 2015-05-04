@@ -9,3 +9,9 @@ var preferences = {};
  * @type {string}
  */
 preferences.titleTemplate = '${team} vs ${opponent}';
+
+/**
+ * The template to use for an event description.
+ * @type {string}
+ */
+preferences.descriptionTemplate = '${court}';
