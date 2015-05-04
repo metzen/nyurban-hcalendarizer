@@ -71,8 +71,8 @@ chrome.storage.sync.get(preferences, function(preferences) {
     // support parsing <abbr> titles for "summary" or "location" fields.
     $(this).prepend(createHiddenVeventDataElement(
         new util.Template(preferences.titleTemplate).evaluate({
-            team: team,
-            opponent: opponent
+          team: team,
+          opponent: opponent
         }),
         new util.Template(preferences.descriptionTemplate).evaluate({
           court: court,
