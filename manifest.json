@@ -5,7 +5,7 @@
   "description": "Provides hCalendar annotations for nyurban.com schedules.",
   "content_scripts": [
     {
-      "matches": ["http://www.nyurban.com/team-details/*"],
+      "matches": ["*://www.nyurban.com/team-details/*"],
       "js": [
         "lib/jquery.min.js",
         "lib/hcalendar.js",
