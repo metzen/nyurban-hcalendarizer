@@ -61,7 +61,7 @@ chrome.storage.sync.get(preferences, function(preferences) {
     var locationTokens = $(locationTd).find('div > a').text().trim().split('-');
     var court;
     if (locationTokens.length > 1) {
-      court = nyurban.COURTS[locationTokens[1]] + ' court';
+      court = nyurban.COURTS[locationTokens[1]];
     } else {
       court = '';
     }
